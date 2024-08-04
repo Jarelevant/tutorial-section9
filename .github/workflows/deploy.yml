@@ -72,3 +72,6 @@ jobs:
           bucket: mystatic-bucket-jarele
           dist-folder: ./dist
           bucket-region: us-east-1
+      - name: Output Information
+        run: |
+          echo "Static URL: ${{ steps.deploy.outputs.staticWebsideURL }}"
