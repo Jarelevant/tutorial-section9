@@ -64,11 +64,11 @@ jobs:
       - name: Output contents
         run: ls
       - name: Deploy site
-        run: echo "Deploying..."
-  information:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get code
-        uses: actions/checkout@v3
-      - name: Run custom action
         uses: ./.github/actions/deploy-s3-javascript
+        env:
+          AWS_ACCESS_KEY_ID: AKIA6GBMGG756PQY2JO3
+          AWS_SECRET_ACCESS_KEY: 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
+        with:
+          bucket: mystatic-bucket-jarele
+          dist-folder: ./dist
+          bucket-region: us-east-1
